@@ -1,121 +1,46 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+import Hero from './components/Hero' // Módulo 1
+import ProductDetails from './components/ProductDetails' // Módulo 2
+import ReviewsSummary from './components/ReviewsSummary' // Módulo 3
+import ProductComparison from './components/ProductComparison' // Módulo 4
+import AdditionalProducts from './components/AdditionalProducts' // Módulo 5
+import SustainabilitySection from './components/SustainabilitySection' // Módulo 6
+import EcoLineProducts from './components/EcoLineProducts' // Módulo 7
+// eslint-disable-next-line no-unused-vars -- barra oculta temporariamente (ver render)
+import StickyBuyBar from './components/StickyBuyBar' // Barra de compra fixa
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
+    // Celular (até 479px): tela cheia com scroll nativo da página.
+    // Telas maiores: moldura de exatamente 393x852px, centralizada, com scroll só dentro dela.
+    <div className="min-h-screen bg-[#000000] min-[480px]:bg-zinc-900 min-[480px]:flex min-[480px]:items-center min-[480px]:justify-center min-[480px]:p-4">
+      <div className="relative w-full max-w-[440px] mx-auto min-[480px]:w-[393px] min-[480px]:h-[852px] min-[480px]:max-h-[852px] min-[480px]:shrink-0 min-[480px]:overflow-hidden min-[480px]:shadow-2xl">
+        <main
+          data-scroll-root
+          className="w-full min-[480px]:h-full min-[480px]:overflow-y-auto min-[480px]:overflow-x-hidden min-[480px]:no-scrollbar"
         >
-          Count is {count}
-        </button>
-      </section>
+          {/* Módulo 1: Hero */}
+          <Hero />
+          {/* Módulo 2: ProductDetails */}
+          <ProductDetails />
+          {/* Módulo 3: ReviewsSummary */}
+          <ReviewsSummary />
+          {/* Módulo 4: ProductComparison */}
+          <ProductComparison />
+          {/* Módulo 5: AdditionalProducts */}
+          <AdditionalProducts />
+          {/* Módulo 6: SustainabilitySection */}
+          <SustainabilitySection />
+          {/* Módulo 7: EcoLineProducts */}
+          <EcoLineProducts />
+          {/* Respiro final para a barra de compra fixa — desativado junto com ela (ver abaixo) */}
+          {/* <div aria-hidden className="h-[96px] bg-[#F8F6F1]" /> */}
+        </main>
 
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
+        {/* Barra de compra fixa — OCULTA TEMPORARIAMENTE. Para reativar, descomente a linha abaixo
+            e o respiro final acima. */}
+        {/* <StickyBuyBar /> */}
+      </div>
+    </div>
   )
 }
 
