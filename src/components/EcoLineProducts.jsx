@@ -50,7 +50,7 @@ export default function EcoLineProducts() {
       </div>
 
       {/* 7.2 Products Horizontal Carousel */}
-      <div ref={carouselRef} onScroll={onScroll} className="w-full px-6 mt-10 overflow-x-auto no-scrollbar snap-x snap-mandatory scroll-smooth scroll-pl-6">
+      <div ref={carouselRef} onScroll={onScroll} className="w-full px-6 mt-10 overflow-x-auto no-scrollbar snap-x snap-mandatory scroll-smooth scroll-pl-6 overflow-y-hidden touch-pan-x touch-pan-y select-none">
         <div className="flex gap-3 w-max">
           {ecoProducts.map((item) => (
             <div
@@ -58,7 +58,7 @@ export default function EcoLineProducts() {
               className="w-[240px] h-[440px] flex flex-col flex-shrink-0 snap-start relative rounded-[12px] overflow-hidden"
             >
                             <div className="w-[240px] h-[212px] bg-white relative flex items-center justify-center">
-                <img src={item.image} alt={item.name} loading="lazy" draggable={false} className="w-[152px] h-[152px] object-contain" />
+                <img src={item.image} alt={item.name} loading="lazy" draggable={false} className="pointer-events-none w-[152px] h-[152px] object-contain" />
                 <button className="absolute top-6 right-6 w-12 h-12 bg-white rounded-full flex items-center justify-center border-[1.3px] border-black/10 shadow-md">
                   <FavoriteBorderSharp sx={{ fontSize: 28 }} className="text-black" />
                 </button>

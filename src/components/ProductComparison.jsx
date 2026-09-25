@@ -64,7 +64,7 @@ export default function ProductComparison() {
       </div>
 
       {/* 4.2 Product List Horizontal Carousel */}
-      <div ref={carouselRef} onScroll={onScroll} className="w-full px-6 my-auto overflow-x-auto no-scrollbar snap-x snap-mandatory scroll-smooth scroll-pl-6">
+      <div ref={carouselRef} onScroll={onScroll} className="w-full px-6 my-auto overflow-x-auto no-scrollbar snap-x snap-mandatory scroll-smooth scroll-pl-6 overflow-y-hidden touch-pan-x touch-pan-y select-none">
         <div className="flex gap-3 w-max">
           {comparisonProducts.map((prod) => (
             <div
@@ -73,7 +73,7 @@ export default function ProductComparison() {
             >
               {/* Product Image */}
               <div className="w-[220px] h-[220px] bg-[#F8F6F1] isolate">
-                <img src={prod.image} alt={prod.name} loading="lazy" draggable={false} className="w-full h-full object-cover mix-blend-multiply" />
+                <img src={prod.image} alt={prod.name} loading="lazy" draggable={false} className="pointer-events-none w-full h-full object-cover mix-blend-multiply" />
               </div>
 
               {/* Product Info & CTA */}
