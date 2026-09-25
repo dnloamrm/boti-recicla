@@ -109,7 +109,7 @@ export default function Hero() {
           {showcaseSlides.map((slide, i) => (
             // Foto 1: o branco do arquivo some no areia via multiply. O fundo fica no próprio wrapper
             // (isolate) porque o blend não enxerga o fundo do container de scroll no Safari/Chrome com GPU.
-            <div key={slide} className={`w-full h-full flex-shrink-0 snap-start ${i === 0 ? 'bg-[#F8F6F1] isolate' : 'bg-gray-300'}`}>
+            <div key={slide} className={`w-full h-full flex-shrink-0 snap-start ${i === 0 ? 'bg-[#F8F6F1] isolate transform-gpu [transform:translateZ(0)]' : 'bg-gray-300'}`}>
               <img
                 src={slide}
                 alt={`Elysée Eau de Parfum 50ml — foto ${i + 1} de ${showcaseSlides.length}`}
