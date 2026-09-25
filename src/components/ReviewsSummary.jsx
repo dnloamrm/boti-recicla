@@ -139,8 +139,8 @@ export default function ReviewsSummary() {
 
       {/* 3.4 Bottom Controls (sobre o fundo rosê) */}
       <div className="w-full flex justify-center items-center pt-4 pb-16">
-        <div className="w-full h-[32px] px-6 flex items-center justify-between">
-          <button onClick={prev} aria-label="Anterior" className="w-12 h-12 rounded-full border-[1.3px] border-black/10 flex items-center justify-center text-black">
+        <div className="w-full h-[32px] px-6 flex items-center justify-between mix-blend-difference">
+          <button onClick={prev} aria-label="Anterior" className="w-12 h-12 rounded-full border-[1.3px] border-white/10 flex items-center justify-center text-white">
             <ChevronLeftSharp sx={{ fontSize: 28 }} />
           </button>
 
@@ -150,13 +150,13 @@ export default function ReviewsSummary() {
               <span
                 key={i}
                 className={`w-[5px] h-[5px] rounded-full transition-colors ${
-                  i === activeIndex ? 'bg-black border border-black' : 'border border-black'
+                  i === activeIndex ? 'bg-white border border-white' : 'border border-white'
                 }`}
               />
             ))}
           </div>
 
-          <button onClick={next} aria-label="Próximo" className="w-12 h-12 rounded-full border-[1.3px] border-black/10 flex items-center justify-center text-black">
+          <button onClick={next} aria-label="Próximo" className="w-12 h-12 rounded-full border-[1.3px] border-white/10 flex items-center justify-center text-white">
             <ChevronRightSharp sx={{ fontSize: 28 }} />
           </button>
         </div>
