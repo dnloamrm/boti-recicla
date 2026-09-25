@@ -18,7 +18,7 @@ export default function Hero() {
   const { ref: carouselRef, activeIndex, onScroll, prev, next } = useCarousel();
 
   return (
-    <section className="w-full bg-[#F8F6F1] flex flex-col font-sans text-black">
+    <section className="@container w-full bg-[#F8F6F1] flex flex-col font-sans text-black">
       {/* 1.1 Header */}
       <header className="w-full flex flex-col">
         {/* System Bar Space */}
@@ -34,19 +34,13 @@ export default function Hero() {
           </div>
 
           {/* Action Icons */}
-          <div className="flex items-center gap-4 relative">
+          <div className="flex items-center gap-2">
             <button className="text-black">
               <SearchSharp sx={{ fontSize: 28 }} />
             </button>
-            <div className="relative">
-              <button className="text-black">
-                <ShoppingBagSharp sx={{ fontSize: 28 }} />
-              </button>
-              {/* Cart Badge */}
-              <span className="absolute -top-1 -right-2 bg-black border-2 border-white text-white text-[10px] font-bold w-[18px] h-[18px] rounded-full flex items-center justify-center">
-                1
-              </span>
-            </div>
+            <button className="text-black">
+              <ShoppingBagSharp sx={{ fontSize: 28 }} />
+            </button>
           </div>
         </div>
       </header>
@@ -81,11 +75,11 @@ export default function Hero() {
 
           {/* Reviews */}
           <div className="flex items-center gap-3">
-            <span className="text-[14px] leading-[18px] text-black">Avaliação</span>
+            <span className="hidden @[400px]:inline text-[14px] leading-[18px] text-black">Avaliação</span>
             <div className="bg-black rounded-full px-2 py-[2px] flex items-center gap-1">
-              <StarSharp sx={{ fontSize: 17 }} className="text-white" />
+              <StarSharp sx={{ fontSize: 16 }} className="text-white" />
               <span className="text-[14px] leading-[18px] text-white">4.8</span>
-              <ChevronRightSharp sx={{ fontSize: 28 }} className="text-white" />
+              <ChevronRightSharp sx={{ fontSize: 16 }} className="text-white" />
             </div>
           </div>
         </div>
@@ -126,25 +120,26 @@ export default function Hero() {
           <ShoppingBagSharp sx={{ fontSize: 28 }} />
         </button>
 
-        {/* Carousel Controls (sobre a imagem; a barra não bloqueia o arraste, só os botões são clicáveis) */}
+        {/* Carousel Controls (sobre a imagem; a barra não bloqueia o arraste, só os botões são clicáveis).
+            Fundo branco translúcido + desfoque garante contraste em qualquer foto (clara, média ou escura). */}
         <div className="absolute bottom-0 left-0 right-0 z-10 h-[88px] py-7 px-6 flex items-center justify-between pointer-events-none">
-          <button onClick={prev} aria-label="Anterior" className="pointer-events-auto w-12 h-12 rounded-full border-[1.3px] border-black/10 flex items-center justify-center text-black">
+          <button onClick={prev} aria-label="Anterior" className="pointer-events-auto w-12 h-12 rounded-full bg-white/70 backdrop-blur-md border-[1.3px] border-black/10 flex items-center justify-center text-black">
             <ChevronLeftSharp sx={{ fontSize: 28 }} />
           </button>
 
           {/* Dots Indicator */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 px-3 py-2 rounded-full bg-white/70 backdrop-blur-md">
             {showcaseSlides.map((_, i) => (
               <span
                 key={i}
                 className={`w-[5px] h-[5px] rounded-full transition-colors ${
-                  i === activeIndex ? 'bg-black border border-black' : 'border border-[#333333]'
+                  i === activeIndex ? 'bg-black border border-black' : 'border border-black'
                 }`}
               />
             ))}
           </div>
 
-          <button onClick={next} aria-label="Próximo" className="pointer-events-auto w-12 h-12 rounded-full border-[1.3px] border-black/10 flex items-center justify-center text-black">
+          <button onClick={next} aria-label="Próximo" className="pointer-events-auto w-12 h-12 rounded-full bg-white/70 backdrop-blur-md border-[1.3px] border-black/10 flex items-center justify-center text-black">
             <ChevronRightSharp sx={{ fontSize: 28 }} />
           </button>
         </div>
