@@ -72,7 +72,9 @@ export default function ProductComparison() {
               className="w-[220px] bg-[#F8F6F1] flex flex-col items-start flex-shrink-0 snap-start"
             >
               {/* Product Image */}
-              <img src={prod.image} alt={prod.name} loading="lazy" draggable={false} className="w-[220px] h-[220px] object-cover mix-blend-multiply" />
+              <div className="w-[220px] h-[220px] bg-[#F8F6F1] isolate">
+                <img src={prod.image} alt={prod.name} loading="lazy" draggable={false} className="w-full h-full object-cover mix-blend-multiply" />
+              </div>
 
               {/* Product Info & CTA */}
               <div className="w-[220px] px-6 pt-6 flex flex-col items-center gap-6 text-center">

@@ -107,14 +107,17 @@ export default function Hero() {
         {/* Showcase Images — carrossel de slides em largura total */}
         <div ref={carouselRef} onScroll={onScroll} className="w-full aspect-[4/5] bg-[#F8F6F1] overflow-x-auto no-scrollbar snap-x snap-mandatory scroll-smooth flex gap-0">
           {showcaseSlides.map((slide, i) => (
-            <img
-              key={slide}
-              src={slide}
-              alt={`Elysée Eau de Parfum 50ml — foto ${i + 1} de ${showcaseSlides.length}`}
-              loading={i === 0 ? 'eager' : 'lazy'}
-              draggable={false}
-              className={`w-full h-full object-cover flex-shrink-0 snap-start ${i === 0 ? 'mix-blend-multiply' : 'bg-gray-300'}`}
-            />
+            // Foto 1: o branco do arquivo some no areia via multiply. O fundo fica no próprio wrapper
+            // (isolate) porque o blend não enxerga o fundo do container de scroll no Safari/Chrome com GPU.
+            <div key={slide} className={`w-full h-full flex-shrink-0 snap-start ${i === 0 ? 'bg-[#F8F6F1] isolate' : 'bg-gray-300'}`}>
+              <img
+                src={slide}
+                alt={`Elysée Eau de Parfum 50ml — foto ${i + 1} de ${showcaseSlides.length}`}
+                loading={i === 0 ? 'eager' : 'lazy'}
+                draggable={false}
+                className={`w-full h-full object-cover ${i === 0 ? 'mix-blend-multiply' : ''}`}
+              />
+            </div>
           ))}
         </div>
 
