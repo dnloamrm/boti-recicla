@@ -76,7 +76,7 @@ export default function Hero() {
           {/* Reviews */}
           <div className="flex items-center gap-3">
             <span className="hidden @[400px]:inline text-[14px] leading-[18px] text-black">Avaliação</span>
-            <div className="bg-black rounded-full px-2 py-[2px] flex items-center gap-1">
+            <div className="bg-black py-1 px-2 border-[1.3px] border-black rounded-full flex items-center gap-1">
               <StarSharp sx={{ fontSize: 16 }} className="text-white" />
               <span className="text-[14px] leading-[18px] text-white">4.8</span>
               <ChevronRightSharp sx={{ fontSize: 16 }} className="text-white" />
