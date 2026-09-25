@@ -102,7 +102,7 @@ export default function ReviewsSummary() {
       </div>
 
       {/* 3.3 User Reviews Carousel */}
-      <div ref={carouselRef} onScroll={onScroll} className="w-full px-6 mt-10 mb-8 overflow-x-auto no-scrollbar snap-x snap-mandatory scroll-smooth scroll-pl-6">
+      <div ref={carouselRef} onScroll={onScroll} className="w-full px-6 mt-10 mb-8 overflow-x-auto no-scrollbar snap-x snap-mandatory scroll-smooth scroll-pl-6 overflow-y-hidden touch-pan-x touch-pan-y select-none">
         <div className="flex gap-3 w-max">
           {reviews.map((rev) => (
             <div
@@ -112,7 +112,7 @@ export default function ReviewsSummary() {
               {/* User Header */}
               <div className="flex items-center justify-between">
                 {/* Avatar */}
-                <img src={rev.avatar} alt="" loading="lazy" draggable={false} className="w-10 h-10 rounded-full object-cover bg-gray-300 flex-shrink-0" />
+                <img src={rev.avatar} alt="" loading="lazy" draggable={false} className="pointer-events-none w-10 h-10 rounded-full object-cover bg-gray-300 flex-shrink-0" />
                 <span className="text-[14px] leading-[18px] font-normal text-[#333333] text-right">
                   {rev.name}
                 </span>

@@ -105,7 +105,7 @@ export default function Hero() {
       {/* 1.4 Product Showcase Section — imagem 4:5 com sacola, setas e dots sobrepostos */}
       <div className="relative w-full mt-[40px] bg-[#F8F6F1]">
         {/* Showcase Images — carrossel de slides em largura total */}
-        <div ref={carouselRef} onScroll={onScroll} className="w-full aspect-[4/5] bg-[#F8F6F1] overflow-x-auto no-scrollbar snap-x snap-mandatory scroll-smooth flex gap-0">
+        <div ref={carouselRef} onScroll={onScroll} className="w-full aspect-[4/5] bg-[#F8F6F1] overflow-x-auto no-scrollbar snap-x snap-mandatory scroll-smooth flex gap-0 overflow-y-hidden touch-pan-x touch-pan-y select-none">
           {showcaseSlides.map((slide, i) => (
             // Foto 1: o branco do arquivo some no areia via multiply. O fundo fica no próprio wrapper
             // (isolate) porque o blend não enxerga o fundo do container de scroll no Safari/Chrome com GPU.
@@ -115,7 +115,7 @@ export default function Hero() {
                 alt={`Elysée Eau de Parfum 50ml — foto ${i + 1} de ${showcaseSlides.length}`}
                 loading={i === 0 ? 'eager' : 'lazy'}
                 draggable={false}
-                className={`w-full h-full object-cover ${i === 0 ? 'mix-blend-multiply' : ''}`}
+                className={`pointer-events-none w-full h-full object-cover ${i === 0 ? 'mix-blend-multiply' : ''}`}
               />
             </div>
           ))}

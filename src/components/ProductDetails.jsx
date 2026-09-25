@@ -27,10 +27,10 @@ export default function ProductDetails() {
       {/* 2.2 Images Section (Mosaico flutuante: parallax no scroll + flutuação lenta) */}
       <div ref={mosaicRef} className="relative w-full aspect-[392/368] mt-[64px] mb-[64px]">
         {/* Secondary Image */}
-        <img src={mosaicoSecundaria} alt="" draggable={false} className="absolute left-0 top-[48.913%] w-[61.22%] aspect-[240/188] object-cover bg-gray-300 rounded-none shadow-none translate-y-[calc(var(--parallax,0px)*0.08)] motion-safe:animate-float" />
+        <img src={mosaicoSecundaria} alt="" draggable={false} className="pointer-events-none absolute left-0 top-[48.913%] w-[61.22%] aspect-[240/188] object-cover bg-gray-300 rounded-none shadow-none translate-y-[calc(var(--parallax,0px)*0.08)] motion-safe:animate-float" />
 
         {/* Primary Image */}
-        <img src={mosaicoPrincipal} alt="Mão segurando o Elysée Eau de Parfum" draggable={false} className="absolute right-0 top-0 w-[51.02%] aspect-[200/308] object-cover bg-gray-300 rounded-none shadow-[0_32px_80px_-8px_rgba(120,80,70,0.18)] z-10 translate-y-[calc(var(--parallax,0px)*-0.04)] motion-safe:animate-float-slow" />
+        <img src={mosaicoPrincipal} alt="Mão segurando o Elysée Eau de Parfum" draggable={false} className="pointer-events-none absolute right-0 top-0 w-[51.02%] aspect-[200/308] object-cover bg-gray-300 rounded-none shadow-[0_32px_80px_-8px_rgba(120,80,70,0.18)] z-10 translate-y-[calc(var(--parallax,0px)*-0.04)] motion-safe:animate-float-slow" />
       </div>
 
       {/* 2.3 Product Details Rows Container */}

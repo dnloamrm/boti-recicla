@@ -13,7 +13,7 @@ export default function SustainabilitySection() {
     <section className="w-full max-w-[440px] mx-auto relative flex flex-col font-sans overflow-hidden bg-black">
       
       {/* 6.1 Background (a imagem já vem escurecida no arquivo) */}
-      <img src={bgSustentabilidade} alt="" loading="lazy" draggable={false} className="absolute inset-0 w-full h-full object-cover object-top z-0" />
+      <img src={bgSustentabilidade} alt="" loading="lazy" draggable={false} className="pointer-events-none absolute inset-0 w-full h-full object-cover object-top z-0" />
 
       {/* Main Content */}
       <div className="relative z-10 flex flex-col pt-24 pb-4">
@@ -41,9 +41,9 @@ export default function SustainabilitySection() {
 
         {/* 6.3 Images Showcase (Mosaico flutuante: parallax no scroll + flutuação lenta) */}
         <div ref={mosaicRef} className="relative w-full aspect-[440/500] my-16">
-          <img src={thumbRio} alt="" loading="lazy" draggable={false} className="absolute left-6 top-0 w-[33%] aspect-[144/200] object-cover bg-gray-400 rounded-none shadow-none translate-y-[calc(var(--parallax,0px)*0.08)] motion-safe:animate-float" />
-          <img src={centralRetrato} alt="" loading="lazy" draggable={false} className="absolute left-1/2 -translate-x-1/2 top-[17.6%] w-[54.5%] aspect-[240/368] object-cover bg-gray-300 rounded-none shadow-2xl z-10 translate-y-[calc(var(--parallax,0px)*-0.04)] motion-safe:animate-float-slow" />
-          <img src={thumbAraras} alt="" loading="lazy" draggable={false} className="absolute right-6 top-[68%] w-[33%] aspect-[144/200] object-cover bg-gray-400 rounded-none shadow-none translate-y-[calc(var(--parallax,0px)*0.12)] motion-safe:animate-float [animation-delay:-3s]" />
+          <img src={thumbRio} alt="" loading="lazy" draggable={false} className="pointer-events-none absolute left-6 top-0 w-[33%] aspect-[144/200] object-cover bg-gray-400 rounded-none shadow-none translate-y-[calc(var(--parallax,0px)*0.08)] motion-safe:animate-float" />
+          <img src={centralRetrato} alt="" loading="lazy" draggable={false} className="pointer-events-none absolute left-1/2 -translate-x-1/2 top-[17.6%] w-[54.5%] aspect-[240/368] object-cover bg-gray-300 rounded-none shadow-2xl z-10 translate-y-[calc(var(--parallax,0px)*-0.04)] motion-safe:animate-float-slow" />
+          <img src={thumbAraras} alt="" loading="lazy" draggable={false} className="pointer-events-none absolute right-6 top-[68%] w-[33%] aspect-[144/200] object-cover bg-gray-400 rounded-none shadow-none translate-y-[calc(var(--parallax,0px)*0.12)] motion-safe:animate-float [animation-delay:-3s]" />
         </div>
 
       </div>
